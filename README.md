@@ -47,14 +47,27 @@ This project is an alarm clock as described below:
 
 
 ## Getting Started
+You can either compile and run the code using the online Wokwi simulator, or offline using VSCode with Wokwi and PlatformIO IDE extensions.
 
+### Using the Wokwi Online Simulator
 Create a new project in Wokwi (www.wokwi.com), select the ESP32 and Arduino framework:
 
 - Replace the following files content on just created project with the ones in this repository (sketch.ino, diagram.json, libraries.txt)
 
 - Create all the other files on the project (clock.cpp, clock.h, alarm_tone.cpp, alarm_tone.h, tm1637.cpp, tm1637.h) and copy the contents of them.
 
+> Note: You will find a fully working example of this project in this link: [Fady Ebeid - Udacity Ebmedded Systems Alarm Clock - Wokwi Simulator](https://wokwi.com/projects/415992680098658305) 
+
 Now you are ready to start working on the project
+
+### Using the VSCode with PlatformIO and Wokwi extensions.
+
+- Install VSCode.
+- Install the [Wokwi Simulator](https://marketplace.visualstudio.com/items?itemName=Wokwi.wokwi-vscode) extension
+- Install [PlatformIO IDE](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) extension.
+- Open the root directory of the project in VSCode from `File > Open Folder` menu.
+- Go to platformio from the left-side bar and click `Build` to compile the code.
+- Open the `diagram.json` file to run the simulation.
 
 ## License
 
