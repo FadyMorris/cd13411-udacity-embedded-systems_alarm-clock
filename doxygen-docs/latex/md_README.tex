@@ -1,0 +1,64 @@
+This project is an alarm clock as described below\+:
+
+
+\begin{DoxyItemize}
+\item The clock time starts at 00\+:00 (developer can set an initial time on code). Alarm start set to 00\+:00 and the initial alarm enable state will be defined by the slide switch value (on or off).
+\item \mbox{\hyperlink{classClock}{Clock}} immediately starts ticking. The 4 digit seven-\/segment display has a colon ( \+: ) in the middle for second counting, the clock should blink this colon once every half second (so one blink period is 1 second).
+\item \mbox{\hyperlink{classClock}{Clock}} shows in the 4 seven-\/segment displays the hour and minute in 24h format with zero padding. So 1\+:24am is 01\+:24 and 1\+:24 pm is 13\+:24.
+\item \mbox{\hyperlink{classClock}{Clock}} have 4 buttons to control and configure time and alarm\+: MENU, PLUS (+), MINUS (-\/) and OK.
+\item Clicking on the MENU button each time will cycle to a different menu option\+: \begin{quote}
+SET -\/$>$ To set up the clock time ~\newline
+ AL -\/$>$ To set up the clock alarm time ~\newline
+ (go back to show time) \end{quote}
+
+\item Setting up the time\+:
+\begin{DoxyItemize}
+\item When the clock is showing the time, click on the MENU button once. (Displays show SET)
+\item Click the OK button, the display show the time again, but this time with the HOUR blinking once every second (and the colon steady) to indicate the user can change the hour.
+\item Use the +/-\/ buttons to increment/decrement the hour. Click the OK button to set the hour.
+\item Now the minutes blink to indicate the user can change the minutes.
+\item Use the +/-\/ buttons to increment/decrement the minutes. Click the OK button when done.
+\item Now the clock show the new configured time (and colon continue blinking again)
+\end{DoxyItemize}
+\item Setting up the alarm\+:
+\begin{DoxyItemize}
+\item When the clock is showing the time, click on the MENU button once and then once again (display show AL).
+\item Click the OK button, two scenarios can happen here\+:
+\begin{DoxyItemize}
+\item If the alarm switch is in the enable position\+:
+\begin{DoxyItemize}
+\item The display show the alarm time with the HOUR blinking once every second (and the colon steady) to indicate the user can change the alarm hour.
+\item Use the +/-\/ buttons to increment/decrement the hour. Click the OK button to set the hour. Now the minutes blink to indicate the user can change the minutes.
+\item Use the +/-\/ buttons to increment/decrement the minutes. Click the OK button when done.
+\item Now the clock go back to show the time and alarm be enabled.
+\end{DoxyItemize}
+\item If the alarm switch is in the disabled position\+:
+\begin{DoxyItemize}
+\item The display show Off and after a few seconds it will go back to show the time because the alarm is disabled.
+\end{DoxyItemize}
+\end{DoxyItemize}
+\end{DoxyItemize}
+\item Triggering alarm\+:
+
+At any moment, if the alarm is enabled and the clock time matches the configured alarm time, the buzzer make an alarm sound and the display starts blinking the time once every half second until the user clicks on the OK button which will stop the alarm sound/blink.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md1}{}\doxysection{Getting Started}\label{md_README_autotoc_md1}
+You can either compile and run the code using the online Wokwi simulator, or offline using VSCode with Wokwi and Platform\+IO IDE extensions.\hypertarget{md_README_autotoc_md2}{}\doxysubsection{Using the Wokwi Online Simulator}\label{md_README_autotoc_md2}
+Create a new project in Wokwi (www.\+wokwi.\+com), select the ESP32 and Arduino framework\+:
+
+
+\begin{DoxyItemize}
+\item Replace the following files content on just created project with the ones in this repository (sketch.\+ino, diagram.\+json, libraries.\+txt)
+\item Create all the other files on the project (\mbox{\hyperlink{clock_8cpp}{clock.\+cpp}}, \mbox{\hyperlink{clock_8h}{clock.\+h}}, alarm\+\_\+tone.\+cpp, \mbox{\hyperlink{alarm__tone_8h_source}{alarm\+\_\+tone.\+h}}, tm1637.\+cpp, \mbox{\hyperlink{tm1637_8h_source}{tm1637.\+h}}) and copy the contents of them.
+\end{DoxyItemize}
+
+Now you are ready to start working on the project\hypertarget{md_README_autotoc_md3}{}\doxysubsection{Using the VSCode with Platform\+IO and Wokwi extensions.}\label{md_README_autotoc_md3}
+
+\begin{DoxyItemize}
+\item Install VSCode.
+\item Install the \href{https://marketplace.visualstudio.com/items?itemName=Wokwi.wokwi-vscode}{\texttt{ Wokwi Simulator}} extension
+\item Install \href{https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide}{\texttt{ Platform\+IO IDE}} extension.
+\item Open the root directory of the project in VSCode from {\ttfamily File $>$ Open Folder} menu.
+\item Go to platformio from the left-\/side bar and click {\ttfamily Build} to compile the code.
+\item Open the {\ttfamily diagram.\+json} file to run the simulation.
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md4}{}\doxysection{License}\label{md_README_autotoc_md4}
+\href{LICENSE.txt}{\texttt{ License}} 

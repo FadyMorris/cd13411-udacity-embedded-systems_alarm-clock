@@ -1,0 +1,83 @@
+\hypertarget{classTM1637}{}\doxysection{TM1637 Class Reference}
+\label{classTM1637}\index{TM1637@{TM1637}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTM1637_a188a9364533d4a93dfc3291f223a8911}\label{classTM1637_a188a9364533d4a93dfc3291f223a8911}} 
+{\bfseries TM1637} (uint8\+\_\+t, uint8\+\_\+t)
+\item 
+\mbox{\Hypertarget{classTM1637_a9724ad75a5e72290380af704d04837fc}\label{classTM1637_a9724ad75a5e72290380af704d04837fc}} 
+void {\bfseries init} (void)
+\item 
+\mbox{\Hypertarget{classTM1637_adc665c5db61dee8ade17e0a09d993657}\label{classTM1637_adc665c5db61dee8ade17e0a09d993657}} 
+int {\bfseries write\+Byte} (int8\+\_\+t wr\+\_\+data)
+\item 
+\mbox{\Hypertarget{classTM1637_aa764406e9c0eaba6094cfab12a136477}\label{classTM1637_aa764406e9c0eaba6094cfab12a136477}} 
+void {\bfseries start} (void)
+\item 
+\mbox{\Hypertarget{classTM1637_a850d67e48dba6bbf3fd084ee4b41efbf}\label{classTM1637_a850d67e48dba6bbf3fd084ee4b41efbf}} 
+void {\bfseries stop} (void)
+\item 
+\mbox{\Hypertarget{classTM1637_accdcbe755d0c8142c42da52c0710a3a7}\label{classTM1637_accdcbe755d0c8142c42da52c0710a3a7}} 
+void {\bfseries display} (int8\+\_\+t Disp\+Data\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classTM1637_af351d1dfa744a8eee9f4653f14a77302}\label{classTM1637_af351d1dfa744a8eee9f4653f14a77302}} 
+void {\bfseries display} (uint8\+\_\+t Bit\+Addr, int8\+\_\+t Disp\+Data)
+\item 
+\mbox{\Hypertarget{classTM1637_a6b0b2afbb4d894ed7696a940ad1ea7c0}\label{classTM1637_a6b0b2afbb4d894ed7696a940ad1ea7c0}} 
+void {\bfseries display\+Num} (float num, int decimal=0, bool show\+\_\+minus=true)
+\item 
+\mbox{\Hypertarget{classTM1637_a95668bda5a255a9a0d0b1d0bfd63f651}\label{classTM1637_a95668bda5a255a9a0d0b1d0bfd63f651}} 
+void {\bfseries display\+Str} (char str\mbox{[}$\,$\mbox{]}, uint16\+\_\+t loop\+\_\+delay=500)
+\item 
+\mbox{\Hypertarget{classTM1637_a0878a1628eeb7de3441d89076aa2cfe9}\label{classTM1637_a0878a1628eeb7de3441d89076aa2cfe9}} 
+void {\bfseries clear\+Display} (void)
+\item 
+\mbox{\Hypertarget{classTM1637_ad522a4ee980e68801c51db8425b50475}\label{classTM1637_ad522a4ee980e68801c51db8425b50475}} 
+void {\bfseries set} (uint8\+\_\+t=BRIGHT\+\_\+\+TYPICAL, uint8\+\_\+t=0x40, uint8\+\_\+t=0xc0)
+\item 
+\mbox{\Hypertarget{classTM1637_a1f075a83a4ce146b5b173adb4835caaf}\label{classTM1637_a1f075a83a4ce146b5b173adb4835caaf}} 
+void {\bfseries point} (boolean Point\+Flag)
+\item 
+\mbox{\Hypertarget{classTM1637_a60c3e49934200dda92ed7e9a10b9359c}\label{classTM1637_a60c3e49934200dda92ed7e9a10b9359c}} 
+void {\bfseries coding} (int8\+\_\+t Disp\+Data\mbox{[}$\,$\mbox{]})
+\item 
+\mbox{\Hypertarget{classTM1637_a4bf7a69efd1eaeb2c094870a77ddadc4}\label{classTM1637_a4bf7a69efd1eaeb2c094870a77ddadc4}} 
+int8\+\_\+t {\bfseries coding} (int8\+\_\+t Disp\+Data)
+\item 
+\mbox{\Hypertarget{classTM1637_ae286d98019512a080ca7d87a1891747f}\label{classTM1637_ae286d98019512a080ca7d87a1891747f}} 
+void {\bfseries bit\+Delay} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTM1637_a1cc47c6c72906ac6de7f6f7b62b59b5f}\label{classTM1637_a1cc47c6c72906ac6de7f6f7b62b59b5f}} 
+uint8\+\_\+t {\bfseries cmd\+\_\+set\+\_\+data}
+\item 
+\mbox{\Hypertarget{classTM1637_a5ab4b2f778ecf6ba57c46134e52353f8}\label{classTM1637_a5ab4b2f778ecf6ba57c46134e52353f8}} 
+uint8\+\_\+t {\bfseries cmd\+\_\+set\+\_\+addr}
+\item 
+\mbox{\Hypertarget{classTM1637_a203230513a4b27e7f397f6ca322c1848}\label{classTM1637_a203230513a4b27e7f397f6ca322c1848}} 
+uint8\+\_\+t {\bfseries cmd\+\_\+disp\+\_\+ctrl}
+\item 
+\mbox{\Hypertarget{classTM1637_afd3597d9b44e6371ab77dd7ed01b2be0}\label{classTM1637_afd3597d9b44e6371ab77dd7ed01b2be0}} 
+boolean {\bfseries \+\_\+\+Point\+Flag}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classTM1637_a85840ed3038f66e598ca4302549e59e4}\label{classTM1637_a85840ed3038f66e598ca4302549e59e4}} 
+const int {\bfseries DIGITS} = 4
+\item 
+\mbox{\Hypertarget{classTM1637_a33a02d912c3e8da654a2908845ee7489}\label{classTM1637_a33a02d912c3e8da654a2908845ee7489}} 
+uint8\+\_\+t {\bfseries clkpin}
+\item 
+\mbox{\Hypertarget{classTM1637_ab7fc09c153354938684449d274b31453}\label{classTM1637_ab7fc09c153354938684449d274b31453}} 
+uint8\+\_\+t {\bfseries datapin}
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/tm1637.\+h\item 
+src/tm1637.\+cpp\end{DoxyCompactItemize}

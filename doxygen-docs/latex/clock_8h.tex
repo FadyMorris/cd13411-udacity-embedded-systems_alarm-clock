@@ -1,0 +1,126 @@
+\hypertarget{clock_8h}{}\doxysection{src/clock.h File Reference}
+\label{clock_8h}\index{src/clock.h@{src/clock.h}}
+{\ttfamily \#include $<$cstdint$>$}\newline
+{\ttfamily \#include $<$Arduino.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}tm1637.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}alarm\+\_\+tone.\+h\char`\"{}}\newline
+Include dependency graph for clock.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=331pt]{clock_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=155pt]{clock_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classClock}{Clock}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5}{Clock\+State}} \{ \newline
+\mbox{\hyperlink{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a17b272c4e0ac83f74890752d2dd88195}{STATE\+\_\+\+CLOCK}} = 0
+, \mbox{\hyperlink{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5ae516996fdc72a63a976a4e7b1c6465e5}{STATE\+\_\+\+MENU\+\_\+\+SET}} = 1
+, \mbox{\hyperlink{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a7047798703334a18929f771d460d4627}{STATE\+\_\+\+MENU\+\_\+\+ALARM}} = 2
+, \mbox{\hyperlink{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a251a267e03d368c3a1be82e5dd46e1b8}{STATE\+\_\+\+SET\+\_\+\+CLOCK}} = 3
+, \newline
+\mbox{\hyperlink{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5ae1d319948b44c98da76256a3912ff494}{STATE\+\_\+\+SET\+\_\+\+ALARM}} = 4
+, \mbox{\hyperlink{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a749c9569bf0d69e95698423d413981c1}{STATE\+\_\+\+ALARM\+\_\+\+OFF}} = 5
+, \mbox{\hyperlink{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a5185090945dd2750f96998be663d81a0}{STATE\+\_\+\+ALARM}} = 6
+ \}
+\begin{DoxyCompactList}\small\item\em An enum to define the states of the clock. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2}{Digit\+State}} \{ \mbox{\hyperlink{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2a7c3887648cc783194e800e7d4ceaccf4}{DIGITS\+\_\+\+LEFT}} = 0b10
+, \mbox{\hyperlink{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2afb6beebba536447e517dfb3d026c7de2}{DIGITS\+\_\+\+RIGHT}} = 0b01
+, \mbox{\hyperlink{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2a15108ccafa3232b9067f889b6156f565}{POINT}} = 0b100
+ \}
+\item 
+\mbox{\Hypertarget{clock_8h_ae2d5c50fae96a83cc4f5974af78e6943}\label{clock_8h_ae2d5c50fae96a83cc4f5974af78e6943}} 
+enum \mbox{\hyperlink{clock_8h_ae2d5c50fae96a83cc4f5974af78e6943}{Button\+Type}} \{ {\bfseries BUTTON\+\_\+\+MENU}
+, {\bfseries BUTTON\+\_\+\+PLUS}
+, {\bfseries BUTTON\+\_\+\+MINUS}
+, {\bfseries BUTTON\+\_\+\+OK}
+ \}
+\begin{DoxyCompactList}\small\item\em Button type enum. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{clock_8h_a53a9b07eeab30e13e1febd5856be0241}\label{clock_8h_a53a9b07eeab30e13e1febd5856be0241}} 
+\mbox{\hyperlink{classClock}{Clock}} {\bfseries clk}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interfaces the \mbox{\hyperlink{classClock}{Clock}} class.
+
+This header defines the interface to the clock class. ~\newline
+ 
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5}\label{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5}} 
+\index{clock.h@{clock.h}!ClockState@{ClockState}}
+\index{ClockState@{ClockState}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{ClockState}{ClockState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5}{Clock\+State}}}
+
+
+
+An enum to define the states of the clock. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_CLOCK@{STATE\_CLOCK}!clock.h@{clock.h}}\index{clock.h@{clock.h}!STATE\_CLOCK@{STATE\_CLOCK}}}\mbox{\Hypertarget{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a17b272c4e0ac83f74890752d2dd88195}\label{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a17b272c4e0ac83f74890752d2dd88195}} 
+STATE\+\_\+\+CLOCK&Normal state. Display clock. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_MENU\_SET@{STATE\_MENU\_SET}!clock.h@{clock.h}}\index{clock.h@{clock.h}!STATE\_MENU\_SET@{STATE\_MENU\_SET}}}\mbox{\Hypertarget{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5ae516996fdc72a63a976a4e7b1c6465e5}\label{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5ae516996fdc72a63a976a4e7b1c6465e5}} 
+STATE\+\_\+\+MENU\+\_\+\+SET&Menu (Displaying \char`\"{}\+SET\char`\"{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_MENU\_ALARM@{STATE\_MENU\_ALARM}!clock.h@{clock.h}}\index{clock.h@{clock.h}!STATE\_MENU\_ALARM@{STATE\_MENU\_ALARM}}}\mbox{\Hypertarget{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a7047798703334a18929f771d460d4627}\label{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a7047798703334a18929f771d460d4627}} 
+STATE\+\_\+\+MENU\+\_\+\+ALARM&Menu (Displaying \char`\"{}\+AL\char`\"{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_SET\_CLOCK@{STATE\_SET\_CLOCK}!clock.h@{clock.h}}\index{clock.h@{clock.h}!STATE\_SET\_CLOCK@{STATE\_SET\_CLOCK}}}\mbox{\Hypertarget{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a251a267e03d368c3a1be82e5dd46e1b8}\label{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a251a267e03d368c3a1be82e5dd46e1b8}} 
+STATE\+\_\+\+SET\+\_\+\+CLOCK&Set clock state. Blinking the selected digit being set. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_SET\_ALARM@{STATE\_SET\_ALARM}!clock.h@{clock.h}}\index{clock.h@{clock.h}!STATE\_SET\_ALARM@{STATE\_SET\_ALARM}}}\mbox{\Hypertarget{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5ae1d319948b44c98da76256a3912ff494}\label{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5ae1d319948b44c98da76256a3912ff494}} 
+STATE\+\_\+\+SET\+\_\+\+ALARM&Set alarm state. Blinking the selected digit being set. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_ALARM\_OFF@{STATE\_ALARM\_OFF}!clock.h@{clock.h}}\index{clock.h@{clock.h}!STATE\_ALARM\_OFF@{STATE\_ALARM\_OFF}}}\mbox{\Hypertarget{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a749c9569bf0d69e95698423d413981c1}\label{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a749c9569bf0d69e95698423d413981c1}} 
+STATE\+\_\+\+ALARM\+\_\+\+OFF&Menu after selecting alarm if the alarm is off (Displaying \char`\"{}\+OFF\char`\"{}) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{STATE\_ALARM@{STATE\_ALARM}!clock.h@{clock.h}}\index{clock.h@{clock.h}!STATE\_ALARM@{STATE\_ALARM}}}\mbox{\Hypertarget{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a5185090945dd2750f96998be663d81a0}\label{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a5185090945dd2750f96998be663d81a0}} 
+STATE\+\_\+\+ALARM&The alarm state. The buzzer sounds and the display is blinking with the alarm time. \\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2}\label{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2}} 
+\index{clock.h@{clock.h}!DigitState@{DigitState}}
+\index{DigitState@{DigitState}!clock.h@{clock.h}}
+\doxysubsubsection{\texorpdfstring{DigitState}{DigitState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2}{Digit\+State}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIGITS\_LEFT@{DIGITS\_LEFT}!clock.h@{clock.h}}\index{clock.h@{clock.h}!DIGITS\_LEFT@{DIGITS\_LEFT}}}\mbox{\Hypertarget{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2a7c3887648cc783194e800e7d4ceaccf4}\label{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2a7c3887648cc783194e800e7d4ceaccf4}} 
+DIGITS\+\_\+\+LEFT&left digits of the display (hours) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{DIGITS\_RIGHT@{DIGITS\_RIGHT}!clock.h@{clock.h}}\index{clock.h@{clock.h}!DIGITS\_RIGHT@{DIGITS\_RIGHT}}}\mbox{\Hypertarget{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2afb6beebba536447e517dfb3d026c7de2}\label{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2afb6beebba536447e517dfb3d026c7de2}} 
+DIGITS\+\_\+\+RIGHT&right digits of the display (minutes) \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{POINT@{POINT}!clock.h@{clock.h}}\index{clock.h@{clock.h}!POINT@{POINT}}}\mbox{\Hypertarget{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2a15108ccafa3232b9067f889b6156f565}\label{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2a15108ccafa3232b9067f889b6156f565}} 
+POINT&Point (middle colon) \\
+\hline
+
+\end{DoxyEnumFields}

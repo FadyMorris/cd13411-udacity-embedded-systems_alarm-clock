@@ -1,0 +1,273 @@
+\hypertarget{classClock}{}\doxysection{Clock Class Reference}
+\label{classClock}\index{Clock@{Clock}}
+
+
+Collaboration diagram for Clock\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{classClock__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classClock_adbc370eb6b5f8d01645cf440188160a8}\label{classClock_adbc370eb6b5f8d01645cf440188160a8}} 
+\mbox{\hyperlink{classClock_adbc370eb6b5f8d01645cf440188160a8}{Clock}} ()
+\begin{DoxyCompactList}\small\item\em An empty \mbox{\hyperlink{classClock}{Clock}} constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClock_ad87dc7fb475f65af22f1d129f77236be}{init}} (\mbox{\hyperlink{classTM1637}{TM1637}} $\ast$\mbox{\hyperlink{classClock_afcefbac71f0c732c5a03109183ea48da}{display}}, uint8\+\_\+t buzzer\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em Initialize internal variables, set display to use and buzzer pin. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClock_a05518b46afe86a544ce3502ea8b4fb9c}{set\+\_\+time}} (uint8\+\_\+t hours, uint8\+\_\+t minutes, uint8\+\_\+t seconds)
+\begin{DoxyCompactList}\small\item\em Set the time hour, minutes and seconds to internal binary representation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClock_a8747dcee2bebf951c4d5b3971d62bc9a}{set\+\_\+alarm}} (uint8\+\_\+t hours, uint8\+\_\+t minutes)
+\begin{DoxyCompactList}\small\item\em Set the alarm hour, minutes and seconds. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a2986b503a3dbb48b8f12de86000936a3}\label{classClock_a2986b503a3dbb48b8f12de86000936a3}} 
+void \mbox{\hyperlink{classClock_a2986b503a3dbb48b8f12de86000936a3}{check\+\_\+alarm}} ()
+\begin{DoxyCompactList}\small\item\em Check if alarm needs to be triggered. ~\newline
+ Called by the ISR. If the current time equals the alarm time. It changes the state to {\ttfamily STATE\+\_\+\+ALARM} and sets the alarm down counter to 30 seconds. also modifies the blinking state to blink both the left and rigth digits and the midddle colon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClock_a4d6d689b9543265abfd90acdc6d8f377}{show}} ()
+\begin{DoxyCompactList}\small\item\em Show the time, alarm, or menu on display. ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_ae36794de0f8d7d15bd9c8d8dd859fbab}\label{classClock_ae36794de0f8d7d15bd9c8d8dd859fbab}} 
+void \mbox{\hyperlink{classClock_ae36794de0f8d7d15bd9c8d8dd859fbab}{run}} ()
+\begin{DoxyCompactList}\small\item\em Start running the clock This function MUST not block, everything should be handled by interrupts. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClock_a0ee8fc53c49b204e128e714a2015d68e}{setup\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em Attaches the class member timer to the interrupt service routine to run the interrupt every 0.\+5 seconds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClock_a00e75ce4c4c79c9a4e94caaaf71e1e30}{update\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Attaches the class member timer to the interrupt service routine to run the interrupt every 0.\+5 seconds. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClock_a158e02ff9127b4857e696441b38ebeda}{set\+\_\+temp\+\_\+time}} (int8\+\_\+t offset)
+\begin{DoxyCompactList}\small\item\em A temporary variable to hold time adjusted by plus and minus buttons.\+The time isn\textquotesingle{}t stored unless the OK button is pressed. When in the set menus (for the alarm and the clock), this function modifies the time on the display by an offset. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classClock_ae60d6f9bac4989a21869a640be0690c5}{commit\+\_\+temp\+\_\+time}} ()
+\begin{DoxyCompactList}\small\item\em Commit (store) the value of the temporary time variable in the final storage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a62705e3bd79511bd2804d09a4b27918f}\label{classClock_a62705e3bd79511bd2804d09a4b27918f}} 
+void \mbox{\hyperlink{classClock_a62705e3bd79511bd2804d09a4b27918f}{handle\+Button\+Menu\+Press}} ()
+\begin{DoxyCompactList}\small\item\em Handles Menu button press. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a6e13d034ac903ea6484352670465e18c}\label{classClock_a6e13d034ac903ea6484352670465e18c}} 
+void \mbox{\hyperlink{classClock_a6e13d034ac903ea6484352670465e18c}{handle\+Button\+Ok\+Press}} ()
+\begin{DoxyCompactList}\small\item\em Handles OK button press. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a4a6502564d3ab082ca13e9a21761c032}\label{classClock_a4a6502564d3ab082ca13e9a21761c032}} 
+void \mbox{\hyperlink{classClock_a4a6502564d3ab082ca13e9a21761c032}{handle\+Button\+Plus\+Press}} ()
+\begin{DoxyCompactList}\small\item\em Handles {\ttfamily +} button press. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_af51a6d21b6ed617d38608534d162c4ff}\label{classClock_af51a6d21b6ed617d38608534d162c4ff}} 
+void \mbox{\hyperlink{classClock_af51a6d21b6ed617d38608534d162c4ff}{handle\+Button\+Minus\+Press}} ()
+\begin{DoxyCompactList}\small\item\em Handles {\ttfamily -\/} button press. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a77cfe721e7dfde52c58c51385e41491b}\label{classClock_a77cfe721e7dfde52c58c51385e41491b}} 
+void \mbox{\hyperlink{classClock_a77cfe721e7dfde52c58c51385e41491b}{handle\+Switch\+Alarm\+Change}} (bool alarm\+\_\+pin)
+\begin{DoxyCompactList}\small\item\em Enables or disables alarm. Handles the alarm switch change. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classClock_afcefbac71f0c732c5a03109183ea48da}\label{classClock_afcefbac71f0c732c5a03109183ea48da}} 
+\mbox{\hyperlink{classTM1637}{TM1637}} $\ast$ \mbox{\hyperlink{classClock_afcefbac71f0c732c5a03109183ea48da}{display}} = NULL
+\begin{DoxyCompactList}\small\item\em 7-\/segment Display \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_abdec49130a3aced759cbfabec55b11ba}\label{classClock_abdec49130a3aced759cbfabec55b11ba}} 
+hw\+\_\+timer\+\_\+t $\ast$ \mbox{\hyperlink{classClock_abdec49130a3aced759cbfabec55b11ba}{timer}} = NULL
+\begin{DoxyCompactList}\small\item\em Timer variable to count time. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a31388342730bbb6623703755c033ddd0}\label{classClock_a31388342730bbb6623703755c033ddd0}} 
+\mbox{\hyperlink{classAlarmTone}{Alarm\+Tone}} $\ast$ \mbox{\hyperlink{classClock_a31388342730bbb6623703755c033ddd0}{alarm\+\_\+tone}}
+\begin{DoxyCompactList}\small\item\em The buzzer variable. Pointing to the buzzer object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a0812865f2398cad130ef11edb3df8abd}\label{classClock_a0812865f2398cad130ef11edb3df8abd}} 
+uint32\+\_\+t {\bfseries time} = 0
+\item 
+\mbox{\Hypertarget{classClock_ab7c15d54648106ff56b4defce5ef2ca7}\label{classClock_ab7c15d54648106ff56b4defce5ef2ca7}} 
+uint32\+\_\+t {\bfseries alarm} = 0
+\item 
+\mbox{\Hypertarget{classClock_a17782e6eb2c9ac024f31a146c3a25139}\label{classClock_a17782e6eb2c9ac024f31a146c3a25139}} 
+uint32\+\_\+t $\ast$ \mbox{\hyperlink{classClock_a17782e6eb2c9ac024f31a146c3a25139}{time\+\_\+to\+\_\+set}} = nullptr
+\begin{DoxyCompactList}\small\item\em A pointer of the current time to set. Points to either clock or alarm. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classClock_a88b74f1e6f79509e21f3bcc1d3f36811}{temp\+\_\+time}} = 0
+\item 
+\mbox{\Hypertarget{classClock_a9b1632d9541d746238d2e2eb73444eff}\label{classClock_a9b1632d9541d746238d2e2eb73444eff}} 
+uint32\+\_\+t \mbox{\hyperlink{classClock_a9b1632d9541d746238d2e2eb73444eff}{timestamp}} = 0
+\begin{DoxyCompactList}\small\item\em timestamp in milliseconds. Used for incrementing the time counter and advancing the clock. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a7de6f8771296d2f4c159d5f68d0edf80}\label{classClock_a7de6f8771296d2f4c159d5f68d0edf80}} 
+uint8\+\_\+t \mbox{\hyperlink{classClock_a7de6f8771296d2f4c159d5f68d0edf80}{state}} = \mbox{\hyperlink{clock_8h_a8bc91476a4a8e13cc2feb8ab1d51b2e5a17b272c4e0ac83f74890752d2dd88195}{STATE\+\_\+\+CLOCK}}
+\begin{DoxyCompactList}\small\item\em Current state of the clock. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_aac499ce420c242216b99c90e9d8fbc0a}\label{classClock_aac499ce420c242216b99c90e9d8fbc0a}} 
+uint8\+\_\+t \mbox{\hyperlink{classClock_aac499ce420c242216b99c90e9d8fbc0a}{set\+\_\+digit}} = \mbox{\hyperlink{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2a7c3887648cc783194e800e7d4ceaccf4}{DIGITS\+\_\+\+LEFT}}
+\begin{DoxyCompactList}\small\item\em The current digit in focus in the SET or Alarm Menu. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a600ccf847eed73e42a20b6471e6cdf03}\label{classClock_a600ccf847eed73e42a20b6471e6cdf03}} 
+bool {\bfseries alarm\+\_\+enabled} = 0
+\item 
+\mbox{\Hypertarget{classClock_a19e99519ee9bd810c381481f7e122302}\label{classClock_a19e99519ee9bd810c381481f7e122302}} 
+uint8\+\_\+t \mbox{\hyperlink{classClock_a19e99519ee9bd810c381481f7e122302}{blink\+\_\+state}} = \mbox{\hyperlink{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2a15108ccafa3232b9067f889b6156f565}{POINT}}
+\begin{DoxyCompactList}\small\item\em Blinking state\+: middle point (colon), left two digits, right two digits. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a211a598eaf3a5d8b041fae66d084616d}\label{classClock_a211a598eaf3a5d8b041fae66d084616d}} 
+uint8\+\_\+t \mbox{\hyperlink{classClock_a211a598eaf3a5d8b041fae66d084616d}{display\+\_\+state}} = \mbox{\hyperlink{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2a7c3887648cc783194e800e7d4ceaccf4}{DIGITS\+\_\+\+LEFT}} $\vert$ \mbox{\hyperlink{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2a15108ccafa3232b9067f889b6156f565}{POINT}} $\vert$ \mbox{\hyperlink{clock_8h_a684d16ed9d173b07b1470a5e7a770ef2afb6beebba536447e517dfb3d026c7de2}{DIGITS\+\_\+\+RIGHT}}
+\begin{DoxyCompactList}\small\item\em Display state\+: middle point (colon), left two digits, right two digits. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a481235ca9a813b4c64b784bfd5f6fb17}\label{classClock_a481235ca9a813b4c64b784bfd5f6fb17}} 
+uint8\+\_\+t \mbox{\hyperlink{classClock_a481235ca9a813b4c64b784bfd5f6fb17}{alarm\+\_\+off\+\_\+counter}}
+\begin{DoxyCompactList}\small\item\em Counter for Alarm off display message. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classClock_a8827338d215ac75b3547463bbc6cf26b}\label{classClock_a8827338d215ac75b3547463bbc6cf26b}} 
+uint8\+\_\+t \mbox{\hyperlink{classClock_a8827338d215ac75b3547463bbc6cf26b}{alarm\+\_\+counter}}
+\begin{DoxyCompactList}\small\item\em Counter for Alarm sound and display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classClock_ae60d6f9bac4989a21869a640be0690c5}\label{classClock_ae60d6f9bac4989a21869a640be0690c5}} 
+\index{Clock@{Clock}!commit\_temp\_time@{commit\_temp\_time}}
+\index{commit\_temp\_time@{commit\_temp\_time}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{commit\_temp\_time()}{commit\_temp\_time()}}
+{\footnotesize\ttfamily void Clock\+::commit\+\_\+temp\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Commit (store) the value of the temporary time variable in the final storage. 
+
+The final storage can be either the {\ttfamily time} or {\ttfamily alarm} varialbe. Depends on the {\ttfamily time\+\_\+to\+\_\+set} class member (pointer variable). \mbox{\Hypertarget{classClock_ad87dc7fb475f65af22f1d129f77236be}\label{classClock_ad87dc7fb475f65af22f1d129f77236be}} 
+\index{Clock@{Clock}!init@{init}}
+\index{init@{init}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Clock\+::init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTM1637}{TM1637}} $\ast$}]{display,  }\item[{uint8\+\_\+t}]{buzzer\+\_\+pin }\end{DoxyParamCaption})}
+
+
+
+Initialize internal variables, set display to use and buzzer pin. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em display} & The 7-\/segment display object, an instance of the \mbox{\hyperlink{classTM1637}{TM1637}} class. \\
+\hline
+{\em buzzer\+\_\+pin} & The buzzer output pin number. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClock_a8747dcee2bebf951c4d5b3971d62bc9a}\label{classClock_a8747dcee2bebf951c4d5b3971d62bc9a}} 
+\index{Clock@{Clock}!set\_alarm@{set\_alarm}}
+\index{set\_alarm@{set\_alarm}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{set\_alarm()}{set\_alarm()}}
+{\footnotesize\ttfamily void Clock\+::set\+\_\+alarm (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{hours,  }\item[{uint8\+\_\+t}]{minutes }\end{DoxyParamCaption})}
+
+
+
+Set the alarm hour, minutes and seconds. 
+
+See {\ttfamily \mbox{\hyperlink{classClock_a05518b46afe86a544ce3502ea8b4fb9c}{set\+\_\+time()}}} method. 
+\begin{DoxyParams}{Parameters}
+{\em hours} & Hours. \\
+\hline
+{\em minutes} & Minutes. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClock_a158e02ff9127b4857e696441b38ebeda}\label{classClock_a158e02ff9127b4857e696441b38ebeda}} 
+\index{Clock@{Clock}!set\_temp\_time@{set\_temp\_time}}
+\index{set\_temp\_time@{set\_temp\_time}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{set\_temp\_time()}{set\_temp\_time()}}
+{\footnotesize\ttfamily void Clock\+::set\+\_\+temp\+\_\+time (\begin{DoxyParamCaption}\item[{int8\+\_\+t}]{offset }\end{DoxyParamCaption})}
+
+
+
+A temporary variable to hold time adjusted by plus and minus buttons.\+The time isn\textquotesingle{}t stored unless the OK button is pressed. When in the set menus (for the alarm and the clock), this function modifies the time on the display by an offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em offset} & An offset to increment the Clock\+::time variable with. Negative offset decrements the time. ~\newline
+ \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClock_a05518b46afe86a544ce3502ea8b4fb9c}\label{classClock_a05518b46afe86a544ce3502ea8b4fb9c}} 
+\index{Clock@{Clock}!set\_time@{set\_time}}
+\index{set\_time@{set\_time}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{set\_time()}{set\_time()}}
+{\footnotesize\ttfamily void Clock\+::set\+\_\+time (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{hours,  }\item[{uint8\+\_\+t}]{minutes,  }\item[{uint8\+\_\+t}]{seconds }\end{DoxyParamCaption})}
+
+
+
+Set the time hour, minutes and seconds to internal binary representation. 
+
+The class member time variable is a {\ttfamily uint32\+\_\+t} number which represents the hour$\vert$min$\vert$secs in a binary format (17 bits)\+: ~\newline
+
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{3}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 16 15 14 13 12   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 11 10 9 8 7 6   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 5 4 3 2 1 0    }\\\cline{1-3}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 16 15 14 13 12   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 11 10 9 8 7 6   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ 5 4 3 2 1 0    }\\\cline{1-3}
+\endhead
+H H H H H   &m m m m m m   &s s s s s s   \\\cline{1-3}
+\end{longtabu}
+
+
+For example, the number\+: 76717 in binary\+: ~\newline
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 0 0 1 0 | 1 0 1 1 1 0 | 1 0 1 1 0 1}
+
+\end{DoxyCode}
+
+
+Means\+: 1 0 0 1 0 -\/$>$ 18 (hour) ~\newline
+ 1 0 1 1 1 0 -\/$>$ 46 (min) ~\newline
+ 1 0 1 1 0 1 -\/$>$ 45 (sec) ~\newline
+
+
+So this is 18\+:46\+:45 
+\begin{DoxyParams}{Parameters}
+{\em hours} & The hours (24 hour format). \\
+\hline
+{\em minutes} & Minutes \\
+\hline
+{\em seconds} & Seconds \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classClock_a0ee8fc53c49b204e128e714a2015d68e}\label{classClock_a0ee8fc53c49b204e128e714a2015d68e}} 
+\index{Clock@{Clock}!setup\_timer@{setup\_timer}}
+\index{setup\_timer@{setup\_timer}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{setup\_timer()}{setup\_timer()}}
+{\footnotesize\ttfamily void Clock\+::setup\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Attaches the class member timer to the interrupt service routine to run the interrupt every 0.\+5 seconds. 
+
+Source\+: \href{https://www.electronicwings.com/esp32/esp32-timer-interrupts}{\texttt{ https\+://www.\+electronicwings.\+com/esp32/esp32-\/timer-\/interrupts}} \mbox{\Hypertarget{classClock_a4d6d689b9543265abfd90acdc6d8f377}\label{classClock_a4d6d689b9543265abfd90acdc6d8f377}} 
+\index{Clock@{Clock}!show@{show}}
+\index{show@{show}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{show()}{show()}}
+{\footnotesize\ttfamily void Clock\+::show (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Show the time, alarm, or menu on display. ~\newline
+ 
+
+This function checks the current state stored in the class member variable {\ttfamily state} and changes the 7-\/segment display accordingly. ~\newline
+ The blinking is controlled by the {\ttfamily blink\+\_\+state} variable. ~\newline
+ For example\+: ~\newline
+ If {\ttfamily blink\+\_\+state = 0b100} (blinking the middle colon), and {\ttfamily display\+\_\+state} = 0b111 (display all the objects hours, minutes, and middle colon), a call to the function every 0.\+5 seconds will cycle the display state betwen {\ttfamily 0b111} to {\ttfamily 0b011}, creating the blinking effect. ~\newline
+
+
+The xor operation is used to toggle the display\+: \[ \mathrm{display\_state} = \mathrm{display\_state} \oplus \mathrm{blink\_state} \] \mbox{\Hypertarget{classClock_a00e75ce4c4c79c9a4e94caaaf71e1e30}\label{classClock_a00e75ce4c4c79c9a4e94caaaf71e1e30}} 
+\index{Clock@{Clock}!update\_time@{update\_time}}
+\index{update\_time@{update\_time}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{update\_time()}{update\_time()}}
+{\footnotesize\ttfamily void Clock\+::update\+\_\+time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Attaches the class member timer to the interrupt service routine to run the interrupt every 0.\+5 seconds. 
+
+Source\+: \href{https://docs.espressif.com/projects/arduino-esp32/en/latest/api/timer.html}{\texttt{ https\+://docs.\+espressif.\+com/projects/arduino-\/esp32/en/latest/api/timer.\+html}}
+
+Increments the timestamp by 0.\+5 seconds on every call.
+
+Adds 0.\+5 seconds (500 milliseconds). Resets the counter every day. ~\newline
+ $\mathrm{timestamp\;} = (\mathrm{\;timestamp\;} + 500) \mathrm{\;mod\;} (24 \times 60 \times 60 \times 1000)$ 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classClock_a88b74f1e6f79509e21f3bcc1d3f36811}\label{classClock_a88b74f1e6f79509e21f3bcc1d3f36811}} 
+\index{Clock@{Clock}!temp\_time@{temp\_time}}
+\index{temp\_time@{temp\_time}!Clock@{Clock}}
+\doxysubsubsection{\texorpdfstring{temp\_time}{temp\_time}}
+{\footnotesize\ttfamily uint32\+\_\+t Clock\+::temp\+\_\+time = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+The variable on display that is being modified in the set menu. ~\newline
+ This variable isn\textquotesingle{}t stored unless the OK button is pressed. Pressing the menu button cancels the variable storage. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{clock_8h}{clock.\+h}}\item 
+src/\mbox{\hyperlink{clock_8cpp}{clock.\+cpp}}\end{DoxyCompactItemize}
