@@ -1,5 +1,12 @@
-# Alarm clock
+# Alarm Clock Using the ESP32 Microcontroller
 
+## Udacity Graduation Certificate
+[https://www.udacity.com/certificate/e/7d3581ba-7064-11ef-ac22-0b927eebb99c](https://www.udacity.com/certificate/e/7d3581ba-7064-11ef-ac22-0b927eebb99c)
+
+## Project Doxygen Generated Documentation
+The project code documentation can be found in the generated pdf file [refman.pdf](./doxygen-docs/latex/refman.pdf)
+
+## Project Description
 This project is an alarm clock as described below:
 
 - The clock time starts at 00:00 (developer can set an initial time on code). Alarm start set to 00:00 and the initial alarm enable state will be defined by the slide switch value (on or off).
@@ -56,7 +63,7 @@ Create a new project in Wokwi (www.wokwi.com), select the ESP32 and Arduino fram
 
 - Create all the other files on the project (clock.cpp, clock.h, alarm_tone.cpp, alarm_tone.h, tm1637.cpp, tm1637.h) and copy the contents of them.
 
-> Note: You will find a fully working example of this project in this link: [Fady Ebeid - Udacity Ebmedded Systems Alarm Clock - Wokwi Simulator](https://wokwi.com/projects/415992680098658305) 
+> Note: You can find a fully working example of this project in this link: [Fady Ebeid - Udacity Ebmedded Systems Alarm Clock - Wokwi Simulator](https://wokwi.com/projects/415992680098658305) 
 
 Now you are ready to start working on the project
 
